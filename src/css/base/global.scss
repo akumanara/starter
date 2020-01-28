@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Section comment block
+   ========================================================================== */
+/* Sub-section comment block
+   ========================================================================== */
+
+/**
+ * Short description using Doxygen-style comment format
+ *
+ * The first sentence of the long description starts here and continues on this
+ * line for a while finally concluding here at the end of this paragraph.
+ *
+ * The long description is ideal for more detailed explanations and
+ * documentation. It can include example HTML, URLs, or any other information
+ * that is deemed necessary or useful.
+ *            
+ * @tag This is a tag named 'tag'
+ *
+ * TODO: This is a todo statement that describes an atomic task to be completed
+ *   at a later date. It wraps after 80 characters and following lines are
+ *   indented by 2 spaces. 
+ */
+
+/* Basic comment */
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+
+:root {
+  --header-height: 500px;
+  --trans-delay: .5s;
+}
+
+
+$light: #ffffff;
+$dark: #2a2a2a;
+/* red */
+$primary: #cc252d;
+$tirkouaz: #dae4e5;
+$gold: #d38a12;
+$blue: #122a43;
+$blue-light: #266198;
+
+
+
+$trans-delay-1: .3s;
+$trans-easing: cubic-bezier(0.77, 0, 0.175, 1);
+$trans: all .3s $trans-easing;
+$trans2: all .6s $trans-easing;
+$trans3: all 1.2s $trans-easing;
+
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.animate {
+  will-change: transform;
+}
+
+.color-primary {
+  color: $primary;
+}
+
+
+.font-noto {
+  font-family: 'Noto Serif', serif;
+}
+
+
+.img-round {
+  border-radius: 20px;
+}
+
+/* ==========================================================================
+     General
+ ========================================================================== */
+
+body {
+  background-color: $dark;
+  color: $light;
+}
+
+
+
+p,
+body {
+  margin: 0
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 1439px) {}
+
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (max-width: 991px) {}
+
+@media only screen and (max-width: 767px) {}
+
+@media only screen and (max-width: 575px) {}
+
+/* * {
+  outline: 1px solid red;
+} */

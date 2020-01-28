@@ -1,0 +1,125 @@
+/* font-size: responsive [min-font-size] [max-font-size]
+font-range: [lower-bound] [upper-bound] */
+
+$font-range: 575px 1900px;
+$fontsize1: 15px 15px;
+$fontsize2: 15px 18px;
+$fontsize3: 15px 22px;
+$fontsize4: 18px 30px;
+$fontsize5: 30px 50px;
+$fontsize-bg: 100px 140;
+/* $fontsizemenu: 22px 50px; */
+
+
+$lineheightmodifier: 1.8;
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: responsive $fontsize2;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+}
+
+.font-size-1 {
+  font-size: responsive $fontsize1;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+}
+
+.font-size-2 {
+  font-size: responsive $fontsize2;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+}
+
+.font-size-3 {
+  font-size: responsive $fontsize3;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+}
+
+.font-size-4 {
+  font-size: responsive $fontsize4;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+}
+
+.font-size-5 {
+  font-size: responsive $fontsize5;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+}
+
+
+.font-size-bg {
+  font-size: responsive $fontsize-bg;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+}
+
+/* .font-size-menu {
+  font-size: responsive $fontsizemenu;
+  font-range: $font-range;
+  line-height: $lineheightmodifier;
+} */
+
+
+/* Font weights
+   ========================================================================== */
+/* 
+100 - Thin
+200 - Extra Light, Ultra Light
+300 - Light
+400 - Normal, Book, Regular
+500 - Medium
+600 - Semi Bold, Demi Bold
+700 - Bold
+800 - Extra Bold, Ultra Bold
+900 - Black, Heavy 
+*/
+
+.font-weight-100 {
+  font-weight: 100;
+}
+
+.font-weight-200 {
+  font-weight: 200;
+}
+
+/* light */
+.font-weight-300 {
+  font-weight: 300;
+}
+
+/* regular */
+.font-weight-400 {
+  font-weight: 400;
+}
+
+/* medium */
+.font-weight-500 {
+  font-weight: 500;
+}
+
+/* semi-bold */
+.font-weight-600 {
+  font-weight: 600;
+}
+
+/* bold */
+.font-weight-700 {
+  font-weight: 700;
+}
+
+/* black */
+.font-weight-800 {
+  font-weight: 800;
+}
+
+.font-weight-900 {
+  font-weight: 900;
+}
+
+.font-weight-1000 {
+  font-weight: 1000;
+}

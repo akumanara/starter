@@ -1,0 +1,72 @@
+// {
+//   "files.exclude": {
+//     "**/node_modules": true,
+//   },
+//   "editor.tabSize": 2,
+//   "editor.insertSpaces": true,
+//   "editor.detectIndentation": false,
+//   "editor.fontFamily": "'Fira Code'",
+//   "editor.fontLigatures": true,
+//   "editor.fontWeight": "300", // Light
+//   "editor.fontSize": 16,
+//   "editor.codeActionsOnSave": {
+//     "source.fixAll": true
+//   },
+//   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+//   "git.confirmSync": false,
+//   "window.zoomLevel": 0,
+//   "git.enableSmartCommit": true,
+//   "git.autofetch": true,
+//   "files.autoSave": "off",
+
+//   "eslint.trace.server": "messages",
+//   "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+//   "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+//   // "eslint.autoFixOnSave": true,
+//   "files.associations": {
+//     "*.css": "postcss"
+//   },
+//   "files.eol": "\n",
+//   "beautify.ignore": "**/*.js",
+//   "beautify.language": {
+//     "css": [
+//       "css",
+//       "scss",
+//       "postcss"
+//     ],
+//     "html": [
+//       "htm",
+//       "html"
+//     ]
+//     // ^^ providing just an array sets the VS Code file type
+//   }
+// }
+
+{
+    "files.exclude": {
+        "**/node_modules": true,
+    },
+    "editor.fontFamily": "'Cascadia Code'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
+    "editor.snippetSuggestions": "top",
+    "beautify.ignore": "**/*.js",
+    "beautify.language": {
+        "css": [
+            "css",
+            "scss",
+            "postcss"
+        ],
+        "html": [
+            "htm",
+            "html"
+        ]
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "git.autofetch": true,
+}

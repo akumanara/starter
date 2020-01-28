@@ -1,0 +1,145 @@
+:root {
+  --padding-1: 3rem;
+  --max-width-1: 182rem;
+  --max-width-2: 120rem;
+  --custom-gutter: 6rem;
+  --side-social: 8rem;
+}
+
+.site-container {
+  position: relative;
+  margin: 0 auto;
+  transition: $trans;
+}
+
+/* CUSTOM GUTTER ON BOOTSTRAP ROW */
+/* .custom-gutter {
+  margin-left: calc(-1* var(--custom-gutter));
+  margin-right: calc(-1* var(--custom-gutter));
+}
+
+.custom-gutter [class*='col-'] {
+  padding-right: var(--custom-gutter);
+  padding-left: var(--custom-gutter);
+} */
+
+.section-space {
+  padding: 12rem 0;
+}
+
+.section-space-small {
+  padding: 6rem 0;
+}
+
+@media only screen and (max-width: 1199px) {
+  .section-space {
+    padding: 11rem 0 !important;
+  }
+
+  .section-space-small {
+    padding: 5rem 0;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .section-space {
+    padding: 10rem 0 !important;
+  }
+
+  .section-space-small {
+    padding: 4rem 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .section-space {
+    padding: 9rem 0 !important;
+  }
+
+  .section-space-small {
+    padding: 3rem 0;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .section-space {
+    padding: 8rem 0 !important;
+  }
+
+  .section-space-small {
+    padding: 2rem 0;
+  }
+}
+
+.container-a {
+  padding-left: var(--side-social);
+  padding-right: var(--side-social);
+  margin: 0 auto;
+  max-width: calc(var(--max-width-1) + var(--side-social) + var(--side-social));
+}
+
+.container-a-no-social {
+  padding-left: var(--padding-1);
+  padding-right: var(--padding-1);
+  margin: 0 auto;
+  max-width: calc(var(--max-width-1) + var(--padding-1) + var(--padding-1));
+}
+
+.container-b {
+  padding-left: var(--side-social);
+  padding-right: var(--side-social);
+  margin: 0 auto;
+  max-width: calc(var(--max-width-2) + var(--side-social) + var(--side-social));
+}
+
+
+
+@media only screen and (max-width: 575px) {
+  :root {
+    --side-social: 3.4rem;
+  }
+}
+
+/* 
+.container-b {
+  padding-left: var(--padding-container-big);
+  padding-right: var(--padding-container-big);
+  margin: 0 auto;
+  max-width: var(--max-width-container-b);
+} */
+
+/* .js-scroll-wrapper {
+  will-change: transform;
+} */
+/* 
+@media only screen and (max-width: 1439px) {
+  :root {
+    --padding-container: 40px;
+    --padding-container-big: 100px;
+    --custom-gutter: 40px;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  :root {
+    --max-width-1: 640px;
+    --custom-gutter: 20px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  :root {
+    --max-width-1: 540px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --max-width-1: 440px;
+  }
+}
+
+
+
+
+}*/
