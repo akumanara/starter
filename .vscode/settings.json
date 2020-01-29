@@ -70,4 +70,5 @@
   },
 
   "git.autofetch": true,
+  "files.eol": "\n"
 }

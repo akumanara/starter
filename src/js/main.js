@@ -1,5 +1,8 @@
 import barba from '@barba/core';
+import Cursor from './modules/cursor';
 
+
+const cursor = new Cursor(document.querySelector('.cursor'));
 
 // basic default transition (with no rules and minimal hooks)
 barba.init({
@@ -12,6 +15,7 @@ barba.init({
       enter({ current, next, trigger }) {
         // do something with `next.container` for your enter transition
         // then return a promise or use `this.async()`
+        cursor.initEvents();
       },
     },
   ],
