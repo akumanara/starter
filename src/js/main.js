@@ -1,4 +1,6 @@
+import css from 'normalize.css';
 import barba from '@barba/core';
+
 
 // basic default transition (with no rules and minimal hooks)
 barba.init({
@@ -50,3 +52,6 @@ barba.init({
 //     },
 //   ],
 // });
+
+
+// window.addEventListener('resize', () => {}, { passive: true });

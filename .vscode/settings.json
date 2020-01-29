@@ -53,6 +53,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "eslint.trace.server": "messages",
+  "eslint.alwaysShowStatus": true,
+  "eslint.codeActionsOnSave.mode": "all",
+  "eslint.debug": true,
+  "eslint.format.enable": true,
   "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
   "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
   "editor.snippetSuggestions": "top",
