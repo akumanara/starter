@@ -37,6 +37,7 @@ sass.compiler = require('node-sass');
 
 gulp.task('css-dev', (done) => {
     return gulp.src([
+            'node_modules/normalize.css/normalize.css',
             src_folder + 'css/**/*.scss'
         ])
         .pipe(order([

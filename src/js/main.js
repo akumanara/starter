@@ -1,4 +1,3 @@
-import css from 'normalize.css';
 import barba from '@barba/core';
 
 
