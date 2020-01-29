@@ -44,10 +44,21 @@ export default class {
 
   initEvents() {
     this.elements = document.querySelectorAll('a');
+
     each(this.elements, (element) => {
       element.addEventListener('mouseenter', this.enter);
       element.addEventListener('mouseleave', this.leave);
       element.addEventListener('click', this.click);
+    });
+  }
+
+
+  destroyEvents() {
+    this.elements = document.querySelectorAll('a');
+    each(this.elements, (element) => {
+      element.removeEventListener('mouseenter', this.enter);
+      element.removeEventListener('mouseleave', this.leave);
+      element.removeEventListener('click', this.click);
     });
   }
 
@@ -66,11 +77,11 @@ export default class {
     );
     this.lastMousePos.circle.x = lerp(
       this.lastMousePos.circle.x,
-      this.mousePos.x - this.bounds.circle.width / 2, 0.15,
+      this.mousePos.x - this.bounds.circle.width / 2, 0.05,
     );
     this.lastMousePos.circle.y = lerp(
       this.lastMousePos.circle.y,
-      this.mousePos.y - this.bounds.circle.height / 2, 0.15,
+      this.mousePos.y - this.bounds.circle.height / 2, 0.05,
     );
     this.lastScale = lerp(this.lastScale, this.scale, 0.1);
     this.lastOpacity = lerp(this.lastOpacity, this.opacity, 0.1);

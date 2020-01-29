@@ -1,0 +1,11 @@
+.loader {
+  background-color: #d68da5;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  //   top: -100%;
+  left: 0;
+  //   opacity: .3;
+  pointer-events: none;
+  z-index: 99;
+}

@@ -1,21 +1,40 @@
 import barba from '@barba/core';
+import { gsap, Power3 } from 'gsap';
 import Cursor from './modules/cursor';
 
 
 const cursor = new Cursor(document.querySelector('.cursor'));
 
+gsap.set('.loader', { y: '-100vh' });
+
+window.a = cursor;
 // basic default transition (with no rules and minimal hooks)
 barba.init({
   transitions: [
     {
       leave({ current, next, trigger }) {
-        // do something with `current.container` for your leave transition
-        // then return a promise or use `this.async()`
+        return new Promise((resolve) => {
+          cursor.destroyEvents();
+          gsap.fromTo('.loader', { y: '-100vh' }, {
+            y: '0',
+            duration: 0.6,
+            ease: Power3.easeInOut,
+            onComplete() {
+              resolve();
+            },
+          });
+        });
       },
-      enter({ current, next, trigger }) {
-        // do something with `next.container` for your enter transition
-        // then return a promise or use `this.async()`
-        cursor.initEvents();
+      after({ current, next, trigger }) {
+        return new Promise((resolve) => {
+          gsap.fromTo('.loader', { y: '0' }, {
+            y: '100vh',
+            duration: 0.6,
+            ease: Power3.easeInOut,
+          });
+          cursor.initEvents();
+          resolve();
+        });
       },
     },
   ],
