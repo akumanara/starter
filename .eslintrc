@@ -2,5 +2,8 @@
   "env": {
     "browser": true
   },
-  "extends": "eslint-config-airbnb-base"
+  "extends": "eslint-config-airbnb-base",
+  "rules": {
+    "linebreak-style": 0
+  }
 }

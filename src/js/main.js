@@ -1,4 +1,7 @@
 import barba from '@barba/core';
+import barbaCss from '@barba/css';
+import imagesLoaded from 'imagesloaded';
+
 import { gsap, Power3 } from 'gsap';
 import Cursor from './modules/cursor';
 
@@ -7,9 +10,13 @@ const cursor = new Cursor(document.querySelector('.cursor'));
 
 gsap.set('.loader', { y: '-100vh' });
 
-window.a = cursor;
+// window.a = cursor;
+// tell Barba to use the css module
+// barba.use(barbaCss);
 // basic default transition (with no rules and minimal hooks)
 barba.init({
+  cacheIgnore: true,
+  prefetchIgnore: true,
   transitions: [
     {
       leave({ current, next, trigger }) {
@@ -27,18 +34,28 @@ barba.init({
       },
       after({ current, next, trigger }) {
         return new Promise((resolve) => {
-          gsap.fromTo('.loader', { y: '0' }, {
-            y: '100vh',
-            duration: 0.6,
-            ease: Power3.easeInOut,
+          const imgP = new Promise((resolve) => {
+            const imgLoad = imagesLoaded(document.querySelector('main'));
+            imgLoad.on('always', (instance) => {
+              resolve();
+            });
           });
-          cursor.initEvents();
-          resolve();
+
+          imgP.then(() => {
+            gsap.fromTo('.loader', { y: '0' }, {
+              y: '100vh',
+              duration: 0.6,
+              ease: Power3.easeInOut,
+            });
+            cursor.initEvents();
+            resolve();
+          });
         });
       },
     },
   ],
 });
+
 
 // dummy example to illustrate rules and hooks
 // barba.init({
