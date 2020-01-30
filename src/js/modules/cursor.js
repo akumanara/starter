@@ -5,14 +5,9 @@ import gsap from 'gsap';
 const getMousePos = (e) => {
   let posx = 0;
   let posy = 0;
-  //   if (!e) { e = window.event; }
-  if (e.pageX || e.pageY) {
-    posx = e.pageX;
-    posy = e.pageY;
-  } else if (e.clientX || e.clientY) {
-    posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-    posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-  }
+
+  posx = e.clientX;
+  posy = e.clientY;
   return { x: posx, y: posy };
 };
 
@@ -25,12 +20,7 @@ export default class {
       dot: this.DOM.dot.getBoundingClientRect(),
       circle: this.DOM.circle.getBoundingClientRect(),
     };
-    this.scale = 1;
-    this.opacity = 1;
     this.mousePos = { x: 0, y: 0 };
-    this.lastMousePos = { dot: { x: 0, y: 0 }, circle: { x: 0, y: 0 } };
-    this.lastScale = 1;
-    this.lastOpacity = 1;
     this.elements = [];
 
     this.enter = this.enter.bind(this);
