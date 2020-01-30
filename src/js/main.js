@@ -9,7 +9,6 @@ Sentry.init({
   release: 'starter@0.1',
 });
 
-
 // Set 2 Promises before we init Main. Images and Window Load
 const windowLoad = new Promise(((resolve) => {
   window.addEventListener('load', () => {
@@ -26,6 +25,7 @@ Promise.all([windowLoad, imagesLoadedP, window.preloaderDone]).then(() => {
   Main.init();
 });
 
+// Antmoves log output
 const style = [
   'background: #d33d27;',
   'color: white',
@@ -33,4 +33,5 @@ const style = [
   'font-weight: 400',
   'line-height: 25px',
 ].join(';');
+/* eslint-disable no-console */
 console.log('%cMade by AntMoves | Explore more projects @ AntMoves.com', style);
