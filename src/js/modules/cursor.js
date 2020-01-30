@@ -1,5 +1,5 @@
 import { each } from 'lodash';
-import lerp from './utils';
+import gsap from 'gsap';
 
 
 const getMousePos = (e) => {
@@ -67,39 +67,32 @@ export default class {
   }
 
   render() {
-    this.lastMousePos.dot.x = lerp(
-      this.lastMousePos.dot.x,
-      this.mousePos.x - this.bounds.dot.width / 2, 1,
-    );
-    this.lastMousePos.dot.y = lerp(
-      this.lastMousePos.dot.y,
-      this.mousePos.y - this.bounds.dot.height / 2, 1,
-    );
-    this.lastMousePos.circle.x = lerp(
-      this.lastMousePos.circle.x,
-      this.mousePos.x - this.bounds.circle.width / 2, 0.05,
-    );
-    this.lastMousePos.circle.y = lerp(
-      this.lastMousePos.circle.y,
-      this.mousePos.y - this.bounds.circle.height / 2, 0.05,
-    );
-    this.lastScale = lerp(this.lastScale, this.scale, 0.1);
-    this.lastOpacity = lerp(this.lastOpacity, this.opacity, 0.1);
-    this.DOM.dot.style.transform = `translateX(${(this.lastMousePos.dot.x)}px) translateY(${this.lastMousePos.dot.y}px)`;
-    this.DOM.circle.style.transform = `translateX(${(this.lastMousePos.circle.x)}px) translateY(${this.lastMousePos.circle.y}px) scale(${this.lastScale})`;
-    this.DOM.circle.style.opacity = this.lastOpacity;
+    gsap.to(this.DOM.dot, 0, {
+      x: this.mousePos.x - this.bounds.dot.width / 2,
+      y: this.mousePos.y - this.bounds.dot.height / 2,
+    });
+    gsap.to(this.DOM.circle, 0.8, {
+      x: this.mousePos.x - this.bounds.circle.width / 2,
+      y: this.mousePos.y - this.bounds.circle.height / 2,
+    });
     requestAnimationFrame(() => this.render());
   }
 
   enter() {
-    this.scale = 2.7;
+    gsap.to(this.DOM.circle, 0.8, {
+      scale: 3,
+    });
   }
 
   leave() {
-    this.scale = 1;
+    gsap.to(this.DOM.circle, 0.8, {
+      scale: 1,
+    });
   }
 
   click() {
-    this.scale = 1;
+    gsap.to(this.DOM.circle, 0.8, {
+      scale: 1,
+    });
   }
 }

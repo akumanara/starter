@@ -15,9 +15,10 @@ function logToServer(msg) {
     method: 'post',
     body: JSON.stringify(dataToPost),
   }).then((response) => response.json()).then((data) => {
-    console.log(data);
-  }).catch((err) => {
+    // console.log(data);
+  }).catch(() => {
     // We have an error (server down)
+    // console.log(err);
   });
 }
 
@@ -31,7 +32,7 @@ const handleError = (msg, url, lineNo, columnNo, error) => {
     errorMessage: error.message,
     errorStack: error.stack,
   };
-  console.log(objToLog);
+  // console.log(objToLog);
   logToServer(objToLog);
 };
 
