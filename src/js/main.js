@@ -1,5 +1,6 @@
+import './modules/logger';
 import barba from '@barba/core';
-import barbaCss from '@barba/css';
+import barbaPrefetch from '@barba/prefetch';
 import imagesLoaded from 'imagesloaded';
 
 import { gsap, Power3 } from 'gsap';
@@ -13,10 +14,11 @@ gsap.set('.loader', { y: '-100vh' });
 // window.a = cursor;
 // tell Barba to use the css module
 // barba.use(barbaCss);
+barba.use(barbaPrefetch);
 // basic default transition (with no rules and minimal hooks)
 barba.init({
-  cacheIgnore: true,
-  prefetchIgnore: true,
+  // debug: true,
+  preventRunning: true,
   transitions: [
     {
       leave({ current, next, trigger }) {
@@ -55,42 +57,6 @@ barba.init({
     },
   ],
 });
-
-
-// dummy example to illustrate rules and hooks
-// barba.init({
-//   transitions: [
-//     {
-//       name: 'dummy-transition',
-
-//       // apply only when leaving `[data-barba-namespace="home"]`
-//       from: 'home',
-
-//       // apply only when transitioning to `[data-barba-namespace="products | contact"]`
-//       to: {
-//         namespace: ['products', 'contact'],
-//       },
-
-//       // apply only if clicked link contains `.cta`
-//       custom: ({ current, next, trigger }) =
-// > trigger.classList && trigger.classList.contains('cta'),
-
-//       // do leave and enter concurrently
-//       sync: true,
-
-//       // available hooks…
-//       beforeOnce() { },
-//       once() { },
-//       afterOnce() { },
-//       beforeLeave() { },
-//       leave() { },
-//       afterLeave() { },
-//       beforeEnter() { },
-//       enter() { },
-//       afterEnter() { },
-//     },
-//   ],
-// });
 
 
 // window.addEventListener('resize', () => {}, { passive: true });
