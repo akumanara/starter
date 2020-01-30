@@ -16,12 +16,14 @@ Sentry.init({
 const cursor = new Cursor(document.querySelector('.cursor'));
 
 gsap.set('.loader', { y: '-100vh' });
-
 barba.use(barbaPrefetch);
+history.scrollRestoration = 'manual';
+
+// barba.use(barbaCss);
 // basic default transition (with no rules and minimal hooks)
 barba.init({
   // debug: true,
-  preventRunning: true,
+  // preventRunning: true,
   transitions: [
     {
       leave({ current, next, trigger }) {

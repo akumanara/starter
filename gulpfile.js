@@ -115,14 +115,22 @@ gulp.task('js', gulp.series('js-dev', 'js-vendor'));
 //==================================
 // IMAGES TASK
 //==================================
-gulp.task('images', () => {
-    return gulp.src([src_folder + 'images/**/*.+(png|jpg|jpeg|gif|svg|ico)'])
+gulp.task('imagesRaster', () => {
+    return gulp.src([src_folder + 'images/**/*.+(png|jpg|jpeg|gif|ico)'])
         .pipe(imagemin())
+        .pipe(gulp.dest(dist_folder + 'images'))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('imagesVector', () => {
+    return gulp.src([src_folder + 'images/**/*.+(svg)'])
         .pipe(svgmin())
         .pipe(gulp.dest(dist_folder + 'images'))
         .pipe(browserSync.stream());
 });
 
+
+gulp.task('images', gulp.series('imagesRaster', 'imagesVector'));
 
 //==================================
 // FONTS (fontawesome)
