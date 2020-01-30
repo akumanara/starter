@@ -51,6 +51,16 @@ $trans: all .3s $trans-easing;
 $trans2: all .6s $trans-easing;
 $trans3: all 1.2s $trans-easing;
 
+img {
+  opacity: 0;
+  transition: $trans3;
+  transform: translateY(30px);
+}
+
+img.in-view {
+  opacity: 1;
+  transform: none;
+}
 
 .cursor-pointer {
   cursor: pointer;
