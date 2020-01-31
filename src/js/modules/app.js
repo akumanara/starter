@@ -102,7 +102,7 @@ const Main = {
     images.forEach((header) => {
       obs.observe(header);
     });
-    window.d = obs;
+    // window.d = obs;
   },
 };
 

@@ -93,7 +93,7 @@ gulp.task('js-vendor', (done) => {
         .on('error', function(error) {
             console.log(error);
             done();
-        })
+        });
 });
 
 gulp.task('js-dev', (done) => {
@@ -105,7 +105,7 @@ gulp.task('js-dev', (done) => {
             done();
         })
         .pipe(minify({
-            'noSource': true
+            'noSource': false
         }))
         .pipe(gulp.dest(dist_folder + 'js/'))
         .pipe(browserSync.stream());
