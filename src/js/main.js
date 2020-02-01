@@ -1,4 +1,3 @@
-// import './modules/logger';
 import * as Sentry from '@sentry/browser';
 import imagesLoaded from 'imagesloaded';
 import Main from './modules/app';
@@ -22,12 +21,10 @@ const imagesLoadedP = new Promise(((resolve) => {
   });
 }));
 Promise.all([windowLoad, imagesLoadedP, window.preloaderDone]).then(() => {
-  const app = new Main();
-  // const a = new Cursor(document.querySelector('.cursor'));
-  // a.testMethod();
+  /* eslint-disable-next-line no-new */
+  new Main();
 });
 
-// Antmoves log output
 const style = [
   'background: #d33d27;',
   'color: white',
@@ -35,5 +32,5 @@ const style = [
   'font-weight: 400',
   'line-height: 25px',
 ].join(';');
-/* eslint-disable no-console */
+/* eslint-disable-next-line no-console */
 console.log('%cMade by AntMoves | Explore more projects @ AntMoves.com', style);
