@@ -12,6 +12,10 @@ const { history } = window;
 class Main {
   constructor() {
     const self = this;
+    this.DOM = {
+      main: document.querySelector('main'),
+    };
+
     history.scrollRestoration = 'manual';
     this.cursor = new Cursor(document.querySelector('.cursor'));
     this.observer = new IntersectionObserver((entries) => {
@@ -33,7 +37,7 @@ class Main {
 
     barba.use(barbaPrefetch);
     barba.init({
-      // debug: true,
+      debug: true,
       preventRunning: true,
       transitions: [{
         leave({ current, next, trigger }) {
@@ -41,13 +45,9 @@ class Main {
         },
         after({ current, next, trigger }) {
           // i need to hook on the after element in order to wait for the images to load
-          return new Promise((resolve) => {
-            const imgLoad = imagesLoaded(document.querySelector('main'));
-            imgLoad.on('always', (instance) => {
-              self.onEveryPageLoad();
-              transitionEnter(next).then(resolve());
-            });
-          });
+          return self.loadImages()
+            .then(() => transitionEnter(next)
+              .then(() => self.onEveryPageLoad()));
         },
       }],
     });
@@ -61,6 +61,15 @@ class Main {
 
   onFirstLoad() {
     this.setObserver();
+  }
+
+  loadImages() {
+    return new Promise((resolve) => {
+      const imgLoad = imagesLoaded(this.DOM.main);
+      imgLoad.on('always', (instance) => {
+        resolve();
+      });
+    });
   }
 
   onResize() {
