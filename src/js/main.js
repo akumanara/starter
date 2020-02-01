@@ -22,7 +22,9 @@ const imagesLoadedP = new Promise(((resolve) => {
   });
 }));
 Promise.all([windowLoad, imagesLoadedP, window.preloaderDone]).then(() => {
-  Main.init();
+  const app = new Main();
+  // const a = new Cursor(document.querySelector('.cursor'));
+  // a.testMethod();
 });
 
 // Antmoves log output

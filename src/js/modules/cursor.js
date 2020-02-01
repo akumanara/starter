@@ -42,7 +42,6 @@ export default class {
     });
   }
 
-
   destroyEvents() {
     this.elements = document.querySelectorAll('a');
     each(this.elements, (element) => {
