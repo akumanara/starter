@@ -1,6 +1,6 @@
 import * as Sentry from '@sentry/browser';
 import imagesLoaded from 'imagesloaded';
-import Main from './modules/app';
+import App from './modules/app';
 
 // Set up js error logging to sentry io
 Sentry.init({
@@ -22,7 +22,7 @@ const imagesLoadedP = new Promise(((resolve) => {
 }));
 Promise.all([windowLoad, imagesLoadedP, window.preloaderDone]).then(() => {
   /* eslint-disable-next-line no-new */
-  new Main();
+  new App();
 });
 
 const style = [

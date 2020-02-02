@@ -39,4 +39,6 @@ const transitionEnter = (next) => new Promise((resolve) => {
   }, '-=.6');
 });
 
-export { transitionLeave, transitionEnter };
+const setPreloader = () => gsap.set('.loader', { y: '-100vh' });
+
+export { transitionLeave, transitionEnter, setPreloader };

@@ -3,15 +3,13 @@ import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
 import imagesLoaded from 'imagesloaded';
 
-import { gsap, Power3 } from 'gsap';
 import _ from 'lodash';
 import Cursor from './cursor';
-import { transitionEnter, transitionLeave } from './animations';
+import { transitionEnter, transitionLeave, setPreloader } from './animations';
 
 const { history } = window;
-class Main {
+class App {
   constructor() {
-    const self = this;
     this.DOM = {
       main: document.querySelector('main'),
     };
@@ -30,11 +28,14 @@ class Main {
       threshold: 0.1,
     });
 
-    // preloader set
-    gsap.set('.loader', { y: '-100vh' });
-    // Added resize
     window.addEventListener('resize', _.debounce(this.onResize, 150));
+    setPreloader();
+    this.setBarba();
+    this.onFirstLoad();
+  }
 
+  setBarba() {
+    const self = this;
     barba.use(barbaPrefetch);
     barba.init({
       debug: true,
@@ -51,7 +52,6 @@ class Main {
         },
       }],
     });
-    this.onFirstLoad();
   }
 
   onEveryPageLoad() {
@@ -83,4 +83,4 @@ class Main {
   }
 }
 
-export default Main;
+export default App;
