@@ -1,6 +1,8 @@
 import * as Sentry from '@sentry/browser';
+import Sniffer from 'sniffer';
 import imagesLoaded from 'imagesloaded';
 import App from './modules/app';
+
 
 // Set up js error logging to sentry io
 Sentry.init({
@@ -8,6 +10,7 @@ Sentry.init({
   release: 'starter@0.1',
 });
 
+Sniffer.addClasses(document.documentElement);
 // Set 2 Promises before we init Main. Images and Window Load
 const windowLoad = new Promise(((resolve) => {
   window.addEventListener('load', () => {
