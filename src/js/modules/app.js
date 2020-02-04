@@ -69,7 +69,6 @@ class App {
   }
 
   onEveryPageLoad() {
-    console.log('onEveryPageLoad');
     this.cursor.initEvents();
     this.setObserver();
   }
