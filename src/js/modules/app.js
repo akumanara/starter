@@ -40,6 +40,20 @@ class App {
     barba.init({
       debug: true,
       preventRunning: true,
+      views: [
+        {
+          namespace: 'home',
+          afterEnter(data) {
+            console.log('afterEnter home');
+          },
+        },
+        {
+          namespace: 'about',
+          afterEnter(data) {
+            console.log('afterEnter about');
+          },
+        },
+      ],
       transitions: [{
         leave({ current, next, trigger }) {
           return transitionLeave(current);
@@ -55,6 +69,7 @@ class App {
   }
 
   onEveryPageLoad() {
+    console.log('onEveryPageLoad');
     this.cursor.initEvents();
     this.setObserver();
   }
