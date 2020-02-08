@@ -1,0 +1,68 @@
+Ctrl + Shift + E
+------------------
+Switch Explorer and active file
+
+Ctrl + ~
+------------------
+Open Terminal
+
+Ctrl + Shift + F
+------------------
+Search in all folders
+
+Alt + Arrow left
+Alt + Arrow right
+------------------
+Move to previous/next cursor line
+
+Ctrl + Shift + {
+Ctrl + Shift + }
+------------------
+Fold / Unfold current block
+
+Ctrl + K + Ctrl + 0
+Ctrl + K + Ctrl + J
+------------------
+Collapse all
+Fold All
+
+Ctrl + Shift + P
+------------------
+VSCODE Command Window...
+
+Ctrl + P
+------------------
+Go To file...
+
+
+Ctrl + Shift + O
+------------------
+Go to symbol in file
+
+
+Ctrl + Alt + N
+------------------
+Advanced new file (vscode plugin)
+
+F12
+------------------
+Go to definition
+
+Alt + F12
+------------------
+Peek definition
+
+
+Alt + Arrow up
+Alt + Arrow down
+------------------
+Move line(s) Down/Up
+
+Shift + Alt + Arrow up
+Shift + Alt + Arrow down
+------------------
+Copy line(s) Down/Up
+
+Show hover
+------------------
+Ctrl + K Ctrl I

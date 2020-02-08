@@ -1,8 +1,8 @@
 import * as Sentry from '@sentry/browser';
 import Sniffer from 'sniffer';
 import imagesLoaded from 'imagesloaded';
+import _ from 'lodash';
 import App from './modules/app';
-
 
 // Set up js error logging to sentry io
 Sentry.init({
@@ -28,6 +28,16 @@ Promise.all([windowLoad, imagesLoadedP, window.preloaderDone]).then(() => {
   new App();
 });
 
+const styleD = [
+  'background: #000;',
+  'color: white',
+  'padding: 5px 20px',
+  'font-weight: 400',
+  'line-height: 15px',
+].join(';');
+/* eslint-disable-next-line no-console */
+console.log('%c 🤔💭 2b || !2b', styleD);
+
 const style = [
   'background: #d33d27;',
   'color: white',
@@ -36,4 +46,28 @@ const style = [
   'line-height: 25px',
 ].join(';');
 /* eslint-disable-next-line no-console */
-console.log('%cMade by AntMoves | Explore more projects @ AntMoves.com', style);
+console.log('%cMade by AntMoves | Explore more projects @ antmoves.com', style);
+
+
+// const users = [{
+//   id: 1,
+//   first_name: 'John',
+//   status: 'active',
+// },
+// {
+//   id: 2,
+//   first_name: 'Mike',
+//   status: 'inactive',
+// },
+// ];
+
+
+// function normalizeUsers(users) {
+//   return _.map(users, (item) => ({
+//     id: item.id,
+//     firstName: item.first_name,
+//     isActive: item.status === 'active',
+//   }));
+// }
+
+// console.log(normalizeUsers(users));
