@@ -1,61 +1,35 @@
-// {
-//   "files.exclude": {
-//     "**/node_modules": true,
-//   },
-//   "editor.tabSize": 2,
-//   "editor.insertSpaces": true,
-//   "editor.detectIndentation": false,
-//   "editor.fontFamily": "'Fira Code'",
-//   "editor.fontLigatures": true,
-//   "editor.fontWeight": "300", // Light
-//   "editor.fontSize": 16,
-//   "editor.codeActionsOnSave": {
-//     "source.fixAll": true
-//   },
-//   "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-//   "git.confirmSync": false,
-//   "window.zoomLevel": 0,
-//   "git.enableSmartCommit": true,
-//   "git.autofetch": true,
-//   "files.autoSave": "off",
-
-//   "eslint.trace.server": "messages",
-//   "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
-//   "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
-//   // "eslint.autoFixOnSave": true,
-//   "files.associations": {
-//     "*.css": "postcss"
-//   },
-//   "files.eol": "\n",
-//   "beautify.ignore": "**/*.js",
-//   "beautify.language": {
-//     "css": [
-//       "css",
-//       "scss",
-//       "postcss"
-//     ],
-//     "html": [
-//       "htm",
-//       "html"
-//     ]
-//     // ^^ providing just an array sets the VS Code file type
-//   }
-// }
-
 {
-  "files.exclude": {
-    "**/node_modules": true,
-  },
+  //Editor
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.renderWhitespace": "all",
   "editor.fontFamily": "'Cascadia Code'",
   "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
+  "editor.snippetSuggestions": "top",
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.maxColumn": 100,
+  "editor.cursorBlinking": "phase",
+
+  //Explorer & EOL
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "files.exclude": {
+    "**/node_modules": true,
+  },
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  //Theme
   "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
-  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
-  "editor.snippetSuggestions": "top",
+  "workbench.iconTheme": "vscode-icons",
+
+  //Beautify
   "beautify.ignore": "**/*.js",
   "beautify.language": {
     "css": [
@@ -69,6 +43,7 @@
     ]
   },
 
+  //Other
   "git.autofetch": true,
-  "files.eol": "\n"
+  "html-css-class-completion.enableEmmetSupport": true
 }

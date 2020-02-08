@@ -5,7 +5,10 @@ import imagesLoaded from 'imagesloaded';
 
 import _ from 'lodash';
 import Cursor from './cursor';
-import { transitionEnter, transitionLeave, setPreloader } from './animations';
+import {
+  transitionEnter, transitionLeave, setPreloader,
+} from './animations';
+
 
 const { history } = window;
 class App {
