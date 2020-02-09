@@ -1,9 +1,8 @@
-
 import barba from '@barba/core';
 import barbaPrefetch from '@barba/prefetch';
 import imagesLoaded from 'imagesloaded';
 
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
 import Cursor from './cursor';
 import {
   transitionEnter, transitionLeave, setPreloader,
@@ -31,7 +30,7 @@ class App {
       threshold: 0.1,
     });
 
-    window.addEventListener('resize', _.debounce(this.onResize, 150));
+    window.addEventListener('resize', debounce(this.onResize, 150));
     setPreloader();
     this.setBarba();
     this.onFirstLoad();
@@ -90,6 +89,7 @@ class App {
   }
 
   onResize() {
+    console.log('resized');
   }
 
   setObserver() {

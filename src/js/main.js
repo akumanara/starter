@@ -71,3 +71,54 @@ console.log('%cAntmoves | Explore more projects @ antmoves.com', style);
 // }
 
 // console.log(normalizeUsers(users));
+
+// const products = [
+//   {
+//     id: 1,
+//     name: 'milk',
+//     price: '1$',
+//   },
+//   {
+//     id: 2,
+//     name: 'bread',
+//     price: '2$',
+//   },
+//   {
+//     id: 3,
+//     name: 'meat',
+//     price: '3$',
+//   },
+// ];
+
+// function searchProducts(productss, searchedValue) {
+//   return productss.filter((item) => item.name.includes(searchedValue));
+// }
+
+// console.log(searchProducts(products, 'm'));
+
+
+// const users = [
+//   {
+//     id: 1,
+//     name: 'John',
+//     isActive: true,
+//   },
+//   {
+//     id: 2,
+//     name: 'Mike',
+//     isActive: false,
+//   },
+//   {
+//     id: 3,
+//     name: 'Peter',
+//     isActive: true,
+//   },
+// ];
+
+// users.map((user) => ({
+//   id: user.id++,
+//   name: user.name,
+//   isActive: true,
+// }));
+
+// console.log(users);
