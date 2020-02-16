@@ -9,6 +9,13 @@ import {
 } from './animations';
 
 
+const loadImages = (next) => new Promise((resolve) => {
+  const imgLoad = imagesLoaded(next.container);
+  imgLoad.on('always', (instance) => {
+    resolve();
+  });
+});
+
 const { history } = window;
 class App {
   constructor() {
@@ -57,15 +64,10 @@ class App {
         },
       ],
       transitions: [{
-        leave({ current, next, trigger }) {
-          return transitionLeave(current);
-        },
-        after({ current, next, trigger }) {
-          // i need to hook on the after element in order to wait for the images to load
-          return self.loadImages()
-            .then(() => transitionEnter(next)
-              .then(() => self.onEveryPageLoad()));
-        },
+        leave: ({ current, next, trigger }) => transitionLeave(current),
+        after: ({ current, next, trigger }) => loadImages(next)
+          .then(() => transitionEnter(next)
+            .then(() => this.onEveryPageLoad())),
       }],
     });
   }
@@ -79,14 +81,6 @@ class App {
     this.setObserver();
   }
 
-  loadImages() {
-    return new Promise((resolve) => {
-      const imgLoad = imagesLoaded(this.DOM.main);
-      imgLoad.on('always', (instance) => {
-        resolve();
-      });
-    });
-  }
 
   onResize() {
     console.log('resized');
